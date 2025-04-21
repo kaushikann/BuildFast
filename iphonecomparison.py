@@ -30,5 +30,5 @@ st.subheader("Select from a list of iPhone models from dropdown to compare their
 pmodel1 = st.selectbox('Select first model',('iPhone 11', 'iPhone 12', 'iPhone 13', 'iPhone 14'))
 pmodel2 = st.selectbox('Select second model',('iPhone 11', 'iPhone 12', 'iPhone 13', 'iPhone 14'))
 if st.button("Compare"):
-  compare=model_compare_chain.invoke({"pmodel1","pmodel2"})
+  compare=model_compare_chain.invoke({"model1": pmodel1,"model2": pmodel2})
   st.write(compare.content)
