@@ -26,9 +26,9 @@ phone_compare_template = PromptTemplate(template = phone_compare_prompt, input_v
 model_compare_chain = phone_compare_template | gpt4o_mini
 
 st.header("Compare different iPhone models")
-st.subheader("Select from a list of iPhone models from dropdown to compare their product specifications")
-pmodel1 = st.selectbox('Select first model',('iPhone 11', 'iPhone 12', 'iPhone 13', 'iPhone 14'))
-pmodel2 = st.selectbox('Select second model',('iPhone 11', 'iPhone 12', 'iPhone 13', 'iPhone 14'))
+st.subheader("Select from a list of iPhone models to compare their product specifications")
+pmodel1 = st.selectbox('Select first model',('iPhone 11', 'iPhone 12', 'iPhone 12 Pro', 'iPhone 12 Pro max', 'iPhone 13', 'iPhone 13 Pro', 'iPhone 13 Pro Max'))
+pmodel2 = st.selectbox('Select second model',('iPhone 11', 'iPhone 12', 'iPhone 12 Pro', 'iPhone 12 Pro max', 'iPhone 13', 'iPhone 13 Pro', 'iPhone 13 Pro Max'))
 if st.button("Compare"):
   compare=model_compare_chain.invoke({"model1": pmodel1,"model2": pmodel2})
   st.write(compare.content)
