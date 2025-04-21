@@ -12,6 +12,7 @@ Original file is located at
 # %pip install streamlit
 
 import os
+import streamlit as st
 
 os.environ["OPENAI_API_KEY"] = st.secret["OPENAI_API_KEY"]
 
