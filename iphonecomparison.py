@@ -13,7 +13,7 @@ Original file is located at
 
 import os
 
-os.environ["OPENAI_API_KEY"] = ""
+os.environ["OPENAI_API_KEY"] = st.secret["OPENAI_API_KEY"]
 
 from langchain_openai import ChatOpenAI
 
