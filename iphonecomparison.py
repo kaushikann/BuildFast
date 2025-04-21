@@ -16,7 +16,7 @@ from langchain import LLMChain
 import os
 import streamlit as st
 
-os.environ["OPENAI_API_KEY"] = st.secret["OPENAI_API_KEY"]
+os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
 
 gpt4o_mini = ChatOpenAI(model_name = "gpt-4o-mini")
 
