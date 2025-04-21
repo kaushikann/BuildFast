@@ -10,26 +10,20 @@ Original file is located at
 # Commented out IPython magic to ensure Python compatibility.
 # %pip install langchain-openai==0.2.12
 # %pip install streamlit
-
+from langchain_openai import ChatOpenAI
+from langchain import PromptTemplate
+from langchain import LLMChain
 import os
 import streamlit as st
 
 os.environ["OPENAI_API_KEY"] = st.secret["OPENAI_API_KEY"]
 
-from langchain_openai import ChatOpenAI
-
 gpt4o_mini = ChatOpenAI(model_name = "gpt-4o-mini")
-
-from langchain import PromptTemplate
 
 phone_compare_prompt = "Compare product specificiations in a tabular format between iPhone {model1} and {model2}"
 phone_compare_template = PromptTemplate(template = phone_compare_prompt, input_variables =['model1', 'model2'])
 
-from langchain import LLMChain
-
 model_compare_chain = phone_compare_template | gpt4o_mini
-
-import streamlit as st
 
 st.header("Compare different iPhone models")
 st.subheader("Select from a list of iPhone models from dropdown to compare their product specifications")
