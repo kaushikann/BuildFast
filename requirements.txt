@@ -3,4 +3,5 @@ langchain-openai
 langchain-google-genai
 streamlit
 langchain-pinecone
-
+langchain-community
+PyPDF
